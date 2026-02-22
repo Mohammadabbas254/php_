@@ -1,7 +1,7 @@
 Trip Registration Form (PHP + MySQL)
 
 A simple trip registration web application built using PHP, MySQL, HTML, CSS, and JavaScript. This project allows users to submit their trip details through a form, and the data is stored in a MySQL database.
-
+Here attached with Ui and phpmyadmin dashboard whenever user click submit it wills tore the data.
 UI
 
 <img width="1911" height="1024" alt="Screenshot 2026-02-20 002628" src="https://github.com/user-attachments/assets/4aa3845f-7a2f-45bc-8513-94faa17e7085" />
@@ -65,7 +65,7 @@ CREATE TABLE trip (
 );
 
 
-How It Works
+How It Works:
 
 User enters trip details in the form
 
@@ -77,19 +77,6 @@ Data is inserted into trip table
 
 Confirmation message is displayed
 
-Example Form Fields
-
-Name
-
-Age
-
-Gender
-
-Email
-
-Phone
-
-Other Information
 
 
-
+Practised basics also with 01_Basics, 02_MoreBasics
