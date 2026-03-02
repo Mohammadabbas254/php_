@@ -3,6 +3,8 @@
 // INSERT INTO `notes` (`sno`, `title`, `description`, `tstamp`) VALUES ('1', 'php learning', 'this is desc', current_timestamp());
 
 $insert = false;
+$update = false;
+$delete = false;
 //  Connect to the database
 $servername = "localhost";
 $username = "root";
@@ -27,6 +29,11 @@ if (isset($_POST['snoEdit'])){
     // Sql query to be executed
     $sql = "UPDATE `notes` SET `title` = '$title', `description` = '$description' WHERE `notes`.`sno` = $sno";
     $result = mysqli_query($conn, $sql);
+    if($result){
+        $update = true;
+    } else{
+        echo "We could not update the record successfully";
+    }
 }
 else{
     $title = $_POST["title"];
@@ -129,9 +136,24 @@ else{
     <?php 
     if($insert){
         echo  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-  <strong>Success!</strong> Your note has been inserted successfully.
-  <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
-</div>";
+        <strong>Success!</strong> Your note has been inserted successfully.
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>";
+    }
+    ?>
+    <?php 
+    if($delete){
+        echo  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>Success!</strong> Your note has been deleted successfully.
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>";
+    }
+    ?><?php 
+    if($update){
+        echo  "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+        <strong>Success!</strong> Your note has been updated successfully.
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>";
     }
     ?>
     <div class="container my-4">
@@ -203,20 +225,30 @@ else{
                 $('#editModal').modal('toggle');
             })
         })
-        // deletes = document.getElementsByClassName('edit');
-        // Array.from(deletes).forEach((element)=>{
-        //     element.addEventListener("click", (e)=>{
-        //         console.log("edit", );
-        //         tr = e.target.parentNode.parentNode;
-        //         title = tr.getElementsByTagName("td")[0].innerText;
-        //         description = tr.getElementsByTagName("td")[1].innerText;
-        //         console.log(title, description);
-        //         titleEdit.value = title;
-        //         descriptionEdit.value = description;
-        //         snoEdit.value = e.target.id;
-        //         $('#editModal').modal('toggle');
-        //     })
-        // })
+        deletes = document.getElementsByClassName('edit');
+        Array.from(deletes).forEach((element)=>{
+            element.addEventListener("click", (e)=>{
+                console.log("edit", );
+                // tr = e.target.parentNode.parentNode;
+                // title = tr.getElementsByTagName("td")[0].innerText;
+                // description = tr.getElementsByTagName("td")[1].innerText;
+                // console.log(title, description);
+                // titleEdit.value = title;
+                // descriptionEdit.value = description;
+                // snoEdit.value = e.target.id;
+                // $('#editModal').modal('toggle');
+                sno = e.target.id.substr(1,);
+
+                if(confirm("Press a button!")){
+                    console.log("yes");
+                    window.location = `/crud/index.php?delete=${sno}`;
+                    
+                }
+                else{
+
+                }
+            })
+        })
     </script>
 </body>
 
