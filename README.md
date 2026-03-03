@@ -1,4 +1,14 @@
-Trip Registration Form (PHP + MySQL)
+01_Basics:
+Basics of php: Topics covered :  printing, comments, constant, variables, operators, Data Types in php
+
+02_MoreBasics:
+More Basics of php : Topics : If else, loops, functions
+
+03_strings:
+strings and string operations like length, reversing etc
+
+
+03.5 Trip Registration Form (PHP + MySQL) :
 
 A simple trip registration web application built using PHP, MySQL, HTML, CSS, and JavaScript. This project allows users to submit their trip details through a form, and the data is stored in a MySQL database.
 Here attached with Ui and phpmyadmin dashboard whenever user click submit it wills tore the data.
@@ -77,6 +87,7 @@ Data is inserted into trip table
 
 Confirmation message is displayed
 
+04_CRUD:
+Notes app with crud operations
 
 
-Practised basics also with 01_Basics, 02_MoreBasics
